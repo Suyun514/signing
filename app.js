@@ -14,6 +14,10 @@ app.use(router.middleware());
 router.post('/api/sign', ctx => {
     let info = ctx.request.query;
     
+    if (!fs.existsSync('./data')) {
+        fs.mkdirSync('./data');
+    }
+
     if (!fs.existsSync(`./data/${info.course}.json`)) {
         fs.writeFileSync(`./data/${info.course}.json`, '{}');
     }
