@@ -47,6 +47,6 @@ router.get('/api/query', ctx => {
     }
 
     ctx.body += `<br>共计 ${count} 人。`
-})
+});
 
 app.listen(8888);
