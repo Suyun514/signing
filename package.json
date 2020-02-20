@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-router": "^8.0.8",
+    "koa-static": "^5.0.0"
+  },
+  "name": "signing",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suyun514/Signing.git"
+  },
+  "author": "Suyun514",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Suyun514/Signing/issues"
+  },
+  "homepage": "https://github.com/Suyun514/Signing#readme",
+  "description": ""
+}

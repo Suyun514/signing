@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://lib.baomitu.com/jquery/latest/jquery.min.js"></script>
+
+    <title>简易签到平台</title>
+
+    <script>
+        function sign() {
+            let info = document.forms["signForm"];
+            $.post(`/api/sign?course=${info["course"].value}&name=${info["name"].value}`);
+            alert("签到成功！");
+
+            return false;
+        }
+
+        function query() {
+            let info = document.forms["queryForm"];
+            $.get(`/api/query?course=${info["course"].value}`, function(data) {
+                document.getElementById("result").innerHTML = data;
+            });
+
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>签到</h1>
+    <form name="signForm" onsubmit="return sign()">
+        课程：<input type="text" name="course"><br>
+        姓名：<input type="text" name="name"><br>
+        <input type="submit" value="签到">
+    </form>
+
+    <h1>查询签到人数</h1>
+    <form name="queryForm" onsubmit="return query()">
+        课程：<input type="text" name="course"><br>
+        <input type="submit" value="查询">
+    </form>
+    <h2>结果</h2>
+    <p id="result"></p>
+</body>
+
+</html>
