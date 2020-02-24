@@ -9,15 +9,22 @@
     <script>
         function sign() {
             let info = document.forms["signForm"];
-            $.post(`/api/sign?course=${info["course"].value}&name=${info["name"].value}`);
-            alert("签到成功！");
+            $.post(`/api/sign?course=${info["course"].value}&name=${info["name"].value}`, function (data) {
+                console.log(data);
+
+                if (data.success) {
+                    alert("签到成功😀");
+                } else {
+                    alert("签到失败☹️");
+                }
+            });
 
             return false;
         }
 
         function query() {
             let info = document.forms["queryForm"];
-            $.get(`/api/query?course=${info["course"].value}`, function(data) {
+            $.get(`/api/query?course=${info["course"].value}`, function (data) {
                 document.getElementById("result").innerHTML = data;
             });
 
